@@ -31,8 +31,6 @@ def get_event_info(link, data):
 		return get_event_time(link, True, True, False)
 	elif data == "date":
 		return get_event_time(link, True, False, True)
-	elif data == "link":
-		return link
 	if index < 0:
 		return
 	else:
@@ -86,9 +84,9 @@ def convert_to_PST(time):
 		hour = int(time[:2])
 		return str(hour - 8)
 
-# for elem in (link, link1):
-#     print("NEXT EVENT")
-#     for info in ["event_location", "event_name", "event_description", "event_time", "end_time"]:
-#         val = str(get_event_info(elem, info))
-#         print(info + ": " + val)
-#     print("")
+for elem in (link, link1):
+    print("NEXT EVENT")
+    for info in ["event_location", "event_name", "event_description", "event_time", "end_time"]:
+        val = str(get_event_info(elem, info))
+        print(info + ": " + val)
+    print("")
